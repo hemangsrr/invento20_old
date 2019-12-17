@@ -1,0 +1,123 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+{{ event.title }} - Invento 18
+{% endblock %}
+
+{% block meta %}
+<meta property="og:site_name" content="Invento 18" />
+<meta property="og:title" content={{event.title}}" Invento 18">
+<meta property="og:description" content="{{ event.title }} is a {{ event.get_category_display }} event of Invento 18. Be a part of the tech extravaganza of Invento 18.">
+{% endblock %}
+
+{% block content %}
+
+<!-- Main -->
+<div id="main">
+
+    <section class="wrapper style1">
+        <div class="inner">
+            <header class="align-center">
+                <h2>{{event.title}}</h2>
+                {% if request.user.is_staff %}
+                  <a href="{{ event.get_admin_url }}">Edit this event as editor</a>
+                {% endif %}
+                <a href="#" class="button special">
+                  Spot registration available!
+                </a>
+                </blockquote>
+            </header>
+            <span class="image fit detail">
+              <img src="{% if event.posterurl %}
+              {{ event.posterurl }}
+              {% else %}
+              {{ event.imageurl }}
+              {% endif %}" alt="" />
+            </span>
+
+        </div>
+    </section>
+
+    <!-- Three -->
+    <section class="wrapper style1">
+
+
+        <div class="inner">
+            <!-- 3 Column Video Section -->
+            <header class="align-left">
+                {% if event.day == 1 %}
+                <h2>March 16</h2>
+                {% elif event.day == 2 %}
+                <h2>March 17</h2>
+                {% elif event.day == 3 %}
+                <h2>March 18</h2>
+                {% endif %}
+            </header>
+            <div class="row 200%">
+                <div class="6u 12u$(medium)">
+                    <hr />
+
+                    <h2>CATEGORY</h2>
+
+                    {{event.get_category_display}}
+
+                    <hr />
+
+
+                    <h2>DETAILS</h2>
+
+                    {{event.description | linebreaks }}
+
+                    <hr />
+
+                    {% if event.pdfurl %}
+
+                    <h2>Rules</h2>
+
+                    <a href="{{event.pdfurl}}">Download pdf</a>
+
+                    <hr />
+                    {% endif %}
+
+                </div>
+
+                <div class="6u$ 12u$(medium)">
+
+                    <hr/>
+                    <!-- Text stuff -->
+                    {% if event.prize %}
+                    <h2>Winner takes home</h2>
+                    {{event.prize}} ₹
+                    <hr/>
+                    {% endif %}
+                    <h2>CONTACT</h2>
+                    {{event.coordinators|linebreaks}}
+                    <hr />
+                    <h2>REGISTER</h2>
+                    <h3>{{event.fee}} ₹</h3>
+                    {% if event.townscript_code %}
+                      <button onclick="popup('{{ event.townscript_code }}');" class="tsbutton">Register Now</button>
+                      <noscript id="tsNoJsMsg">Javascript on your browser is not enabled.</noscript>
+                      <script src="//www.townscript.com/popup-widget/townscript-widget.nocache.js" type="text/javascript"></script>
+                    {% else %}
+                      <button class="tsbutton">Registration opens soon!</button>
+                    {% endif %}
+
+                    <hr />
+
+
+
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+
+
+
+</div>
+
+
+{% endblock %}
