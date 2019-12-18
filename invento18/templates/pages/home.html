@@ -23,9 +23,9 @@ canvas{
   <div class="inner home">
     <header>
 
-      <svg viewBox="0 0 960 300">
+      <svg viewBox="0 -50 960 300">
         <symbol id="s-text">
-          <text text-anchor="middle" x="50%" y="80%">INVENTO'18</text>
+          <text text-anchor="middle" x="50%" y="80%">INVENTO</text>
         </symbol>
 
         <g class = "g-ants">
@@ -37,8 +37,43 @@ canvas{
         </g>
       </svg>
 
+      <svg viewBox="0 40 960 300">
+        <symbol id="s1-text">
+          <text text-anchor="middle" x="50%" y="80%">2020</text>
+        </symbol>
+
+        <g class = "g-ants">
+          <use xlink:href="#s1-text" class="text-copy"></use>
+          <use xlink:href="#s1-text" class="text-copy"></use>
+          <use xlink:href="#s1-text" class="text-copy"></use>
+          <use xlink:href="#s1-text" class="text-copy"></use>
+          <use xlink:href="#s1-text" class="text-copy"></use>
+        </g>
+      </svg>
+
+      <div class="timer">
+          <h2><p id="COUNT"></p></h2>
+          <script>
+            var countDownDate = new Date("mar 05, 2020 12:00:00").getTime();
+            var x = setInterval(function() {
+              var now = new Date().getTime();
+              var distance = countDownDate - now;
+              var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+              var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+              var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 *60));
+              var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+              document.getElementById("COUNT").innerHTML = days + "D " + hours + "H " + minutes + "M " + seconds + "S ";
+              if (distance < 0) {
+                clearInterval(x);
+                document.getElementById("COUNT").innerHTML = "EXPIRED";
+              }
+            }, 1000);
+          </script>
+        </div>
+
 
       <h3>Government Engineering College Sreekrishnapuram Palakkad</h3>
+      <!--
       <h3>MARCH 16 17 18</h3>
 
     </header>
@@ -51,20 +86,21 @@ canvas{
     <a href="https://enigma.inventogec.org" class="button special icon fa-search">Play Enigma Online!</a><br>
     <a href="https://images.inventogec.org/pdf/schedule.pdf" class="button special icon fa-download">Download Schedule</a>
   </div>
-
+  -->
 </section>
 
 <!-- Main -->
+<!--
 <div id="main">
 
-  <!-- One -->
+  <!-- One --><!--
   <section class="wrapper style1">
     <div class="inner">
       <header class="align-center">
         <h2>Main Events</h2>
       </header>
 
-      <!-- 2 Column Video Section -->
+      <!-- 2 Column Video Section --><!--
       <div class="flex flex-3">
         <div class="video col">
           <div class="image fit">
@@ -105,13 +141,13 @@ canvas{
     </div>
   </section>
 
-  <!-- Two -->
+  <!-- Two --><!--
   <section class="wrapper style2">
     <div class="inner">
       <header>
         <h2>Highlight Events</h2>
       </header>
-      <!-- Tabbed Video Section -->
+      <!-- Tabbed Video Section --><!--
       <div class="flex flex-tabs">
         <ul class="tab-list">
           <li>
@@ -126,10 +162,10 @@ canvas{
         </ul>
         <div class="tabs">
 
-          <!-- Tab 1 -->
+          <!-- Tab 1 --><!--
           <div class="tab tab-1 flex flex-3 active">
 
-              <!-- Video Thumbnail -->
+              <!-- Video Thumbnail --><!--
             <div class="video col">
               <div class="image fit">
                 <img src="{% static 'images/hiphop2.jpg' %}" alt="" />
@@ -142,7 +178,7 @@ canvas{
               </a>
             </div>
 
-            <!-- Video Thumbnail -->
+            <!-- Video Thumbnail --><!--
             <div class="video col">
               <div class="image fit">
                 <img src="{% static 'images/hackforsite.jpg' %}" alt="" />
@@ -155,7 +191,7 @@ canvas{
               </a>
             </div>
 
-            <!-- Video Thumbnail -->
+            <!-- Video Thumbnail --><!--
             <div class="video col">
               <div class="image fit">
                 <img src="{% static 'images/ultimate_engg.jpg' %}" alt="" />
@@ -168,7 +204,7 @@ canvas{
               </a>
             </div>
 
-            <!-- Video Thumbnail -->
+            <!-- Video Thumbnail --><!--
             <div class="video col">
               <div class="image fit">
                 <img src="{% static 'images/holomaniacsforsite.jpg' %}" alt="" />
@@ -181,7 +217,7 @@ canvas{
               </a>
             </div>
 
-            <!-- Video Thumbnail -->
+            <!-- Video Thumbnail --><!--
             <div class="video col">
               <div class="image fit">
                 <img src="{% static 'images/water-displayforsite.jpg' %}" alt="" />
@@ -194,7 +230,7 @@ canvas{
               </a>
             </div>
 
-            <!-- Video Thumbnail -->
+            <!-- Video Thumbnail --><!--
             <div class="video col">
               <div class="image fit">
                 <img src="{% static 'images/aqua.jpg' %}" alt="" />
@@ -207,7 +243,7 @@ canvas{
               </a>
             </div>
 
-            <!-- Video Thumbnail -->
+            <!-- Video Thumbnail --><!--
             <div class="video col">
               <div class="image fit">
                 <img src="{% static 'images/mudrace.jpg' %}" alt="" />
@@ -223,10 +259,10 @@ canvas{
 
           </div>
 
-          <!-- Tab 2 -->
+          <!-- Tab 2 --><!--
           <div class="tab tab-2 flex flex-3">
 
-            <!-- Video Thumbnail -->
+            <!-- Video Thumbnail --><!--
           <div class="video col">
             <div class="image fit">
               <img src="{% static 'images/roadies.jpg' %}" alt="" />
@@ -239,7 +275,7 @@ canvas{
             </a>
           </div>
 
-          <!-- Video Thumbnail -->
+          <!-- Video Thumbnail --><!--
           <div class="video col">
             <div class="image fit">
               <img src="{% static 'images/paper.jpg' %}" alt="" />
@@ -252,7 +288,7 @@ canvas{
             </a>
           </div>
 
-          <!-- Video Thumbnail -->
+          <!-- Video Thumbnail --><!--
           <div class="video col">
             <div class="image fit">
               <img src="{% static 'images/projectexpo.jpg' %}" alt="" />
@@ -265,7 +301,7 @@ canvas{
             </a>
           </div>
 
-            <!-- Video Thumbnail -->
+            <!-- Video Thumbnail --><!--
           <div class="video col">
             <div class="image fit">
               <img src="{% static 'images/best_manager.jpg' %}" alt="" />
@@ -279,7 +315,7 @@ canvas{
             </a>
           </div>
 
-            <!-- Video Thumbnail -->
+            <!-- Video Thumbnail --><!--
           <div class="video col">
             <div class="image fit">
               <img src="{% static 'images/robosoccer.jpg' %}" alt="" />
@@ -292,7 +328,7 @@ canvas{
             </a>
           </div>
 
-          <!-- Video Thumbnail -->
+          <!-- Video Thumbnail --><!--
         <div class="video col">
           <div class="image fit">
             <img src="{% static 'images/treasure.jpg' %}" alt="" />
@@ -306,7 +342,7 @@ canvas{
           </a>
         </div>
 
-          <!-- Video Thumbnail -->
+          <!-- Video Thumbnail --><!--
           <div class="video col">
             <div class="image fit">
               <img src="{% static 'images/vr.jpg' %}" alt="" />
@@ -319,7 +355,7 @@ canvas{
             </a>
           </div>
 
-            <!-- Video Thumbnail -->
+            <!-- Video Thumbnail --><!--
           <div class="video col">
             <div class="image fit">
               <img src="{% static 'images/drone.png' %}" alt="" />
@@ -332,7 +368,7 @@ canvas{
             </a>
           </div>
 
-            <!-- Video Thumbnail -->
+            <!-- Video Thumbnail --><!--
           <div class="video col">
             <div class="image fit">
               <img src="{% static 'images/inspectra.jpg' %}" alt="" />
@@ -349,10 +385,10 @@ canvas{
 
           </div>
 
-          <!-- Tab 3 -->
+          <!-- Tab 3 --><!--
           <div class="tab tab-3 flex flex-3">
 
-            <!-- Video Thumbnail -->
+            <!-- Video Thumbnail --><!--
           <div class="video col">
             <div class="image fit">
               <img src="{% static 'images/bands1.jpg' %}" alt="" />
@@ -365,7 +401,7 @@ canvas{
             </a>
           </div>
 
-            <!-- Video Thumbnail -->
+            <!-- Video Thumbnail --><!--
           <div class="video col">
             <div class="image fit">
               <img src="{% static 'images/crusade.jpg' %}" alt="" />
@@ -378,7 +414,7 @@ canvas{
             </a>
             </div>
 
-            <!-- Video Thumbnail -->
+            <!-- Video Thumbnail --><!--
           <div class="video col">
             <div class="image fit">
               <img src="{% static 'images/ITBestTechie.jpg' %}" alt="" />
@@ -391,7 +427,7 @@ canvas{
             </a>
           </div>
 
-            <!-- Video Thumbnail -->
+            <!-- Video Thumbnail --><!--
           <div class="video col">
             <div class="image fit">
               <img src="{% static 'images/strokes.jpg' %}" alt="" />
@@ -411,14 +447,14 @@ canvas{
     </div>
   </section>
 
-  <!-- Three -->
+  <!-- Three --><!--
   <section class="wrapper ">
     <div class="inner">
       <header class="align-center">
         <h2>Department Wise</h2>
       </header>
 
-      <!-- 3 Column Video Section -->
+      <!-- 3 Column Video Section --><!--
       <div class="flex flex-3">
         <div class="video col">
           <div class="image fit">
@@ -505,7 +541,7 @@ canvas{
   </div>
   </section>
 
-</div>
+</div> -->
 
 <script src="{% static 'js/canvas.js' %}"></script>
 
