@@ -13,7 +13,7 @@ from .base import *  # noqa
 
 # DEBUG
 # ------------------------------------------------------------------------------
-#ONly set DEBUG True if the .env says so
+#ONlY set DEBUG True if the .env says so
 DEBUG = env.bool('DJANGO_DEBUG', default=False)
 TEMPLATES[0]['OPTIONS']['debug'] = DEBUG
 
